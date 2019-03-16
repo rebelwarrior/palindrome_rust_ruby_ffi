@@ -1,0 +1,12 @@
+[package]
+name = "palindrome"
+version = "0.1.0"
+authors = ["David Acevedo <rabbit.editor@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+unicode-segmentation = "1.2.1"
+libc = "0.2.50"
+
+[lib]
+crate-type = ["dylib"]
