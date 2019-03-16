@@ -9,3 +9,4 @@ end
 puts Palindrome.is_palindrome_from_ruby("robor")
 puts Palindrome.is_palindrome_from_ruby("robot")
 puts Palindrome.is_palindrome_from_ruby("roboR")
+puts Palindrome.is_palindrome_from_ruby("")
