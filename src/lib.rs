@@ -15,7 +15,20 @@ pub extern fn is_palindrome_from_ruby(s: *const c_char) -> bool {
         CStr::from_ptr(s) //create c_str from pointer
     };
     let r_str = c_str.to_str().unwrap(); 
+    //to.str returns Result, unwrap panics on an Err passes OK
     is_palindrome_unicode(r_str)
+}
+
+#[no_mangle]
+pub extern fn is_palindrome_ascii_from_ruby(s: *const c_char) -> bool {
+    let c_str = unsafe {
+        assert!(!s.is_null()); //panic if string is null
+
+        CStr::from_ptr(s) //create c_str from pointer
+    };
+    let r_str = c_str.to_str().unwrap(); 
+    //to.str returns Result, unwrap panics on an Err passes OK
+    is_palindrome(r_str)
 }
 
 #[no_mangle]
